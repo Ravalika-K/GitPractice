@@ -1,0 +1,28 @@
+﻿@model IList<Employee>;
+
+<table class="table table-striped">
+    <thead>
+    <th>Id</th>
+    <th>Name</th>
+    <th>Salary</th>
+    <th>Designation</th>
+    <th>Email</th>
+    <th>PhnNo</th>
+    </thead>
+    <tbody>
+        @foreach (var emp in Model)
+        {
+            <tr>
+                <td>@emp.Id</td>
+                <td>@emp.Name</td>
+                <td>@emp.Salary</td>
+                <td>@emp.Designation</td>
+                <td>@emp.Email</td>
+                <td>@emp.PhnNo</td>
+                <td><a asp-action="Details" asp-route-id="@emp.Id">Details</a></td>
+                <td><a asp-action="UpdateEmp" asp-route-id="@emp.Id">Update</a></td>
+                <td><a asp-action="DeleteEmp" asp-route-id="@emp.Id">Delete</a></td>
+            </tr>
+        }
+    </tbody>
+</table>
